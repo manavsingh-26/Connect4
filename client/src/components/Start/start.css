@@ -1,0 +1,16 @@
+.boxx {
+  padding: 5% 5%;
+}
+
+.new-game {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.new-game h1 {
+  margin: 10px auto 10px;
+}
+
+.join-game {
+  justify-content: stretch;
+}

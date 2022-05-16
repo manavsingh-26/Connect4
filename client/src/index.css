@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding-right: 2.9%;
+  background-color: #485461;
+  background-image: linear-gradient(to right, #3e7ec2 0%, #214165 74%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

@@ -73,20 +73,20 @@ const Form = (props) => {
 
 
   return (
-    <Box sx={style}>
-      <div className='boxx'>
-        <div className='new-game'>
-          <Button onClick={handleNewGame} size='large' variant="contained" style={{ padding: '0.9rem 2rem' }}>New Game</Button>
-          <h1>{''}</h1>
-        </div>
-        <div className='join-game'>
-          <form onSubmit={handleJoinGame}>
-            <TextField id="outlined-basic" label="Enter Code" size='large' variant="outlined" style={{ marginRight: '10px' }} value={code} onChange={handleChange} required />
-            <Button type='submit' variant="contained" size='large' style={{ padding: '0.9rem 2rem' }}>Join Game</Button>
-          </form>
-        </div>
+
+    <div className='boxx'>
+      <div className='new-game'>
+        <Button onClick={handleNewGame} className='newgame-btn' size='large' variant="contained" >New Game</Button>
+
       </div>
-    </Box>
+      <div className='join-game'>
+        <form onSubmit={handleJoinGame}>
+          <TextField id="outlined-basic" label="Enter Code" size='medium' variant="outlined" style={{ margin: '20px' }} value={code} onChange={handleChange} required />
+          <Button type='submit' className='join-btn' variant="contained" size='large' >Join Game</Button>
+        </form>
+      </div>
+    </div>
+
   )
 }
 

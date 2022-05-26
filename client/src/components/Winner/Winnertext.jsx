@@ -25,19 +25,19 @@ const style = {
 const Winnertext = (props) => {
 
   return (
-    <div>
 
 
-      <div className='box'>
 
-        <div style={{ textAlign: 'center' }}>
+    <div className='boxx'>
 
-          <h1 >{props.text}</h1>
+      <div style={{ textAlign: 'center' }}>
 
-        </div>
-
+        <h1 >{props.text}</h1>
 
       </div>
+
+
+
 
     </div>
   )

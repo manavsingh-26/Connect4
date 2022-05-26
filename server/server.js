@@ -37,6 +37,23 @@ io.on("connection", (socket) => {
     socket.on('new-game', handleNewGame);
     socket.on('join-game', handleJoinGame);
     socket.on('make_move', handleNewMove);
+    socket.on('new_message', handleNewMessage);
+
+    function handleNewMessage(message) {
+        let roomName = clientRoomNames[socket.id];
+        let newText = message.data.text;
+        let newMessage = {
+            author: "them",
+            data: { text: newText },
+            type: "text",
+        }
+
+        console.log(newText);
+
+
+        socket.broadcast.to(roomName).emit('message_recieve', newMessage);
+
+    }
 
     function handleNewGame() {
         let roomName = generateCode(6);
@@ -92,21 +109,21 @@ io.on("connection", (socket) => {
     }
 
     function handleNewMove(data) {
-        roomName = clientRoomNames[socket.id];
+        roomName = clientRoomNames[socket.id];//Getting roomname of the socket id
 
-        new_coord = setPiece(data[0], rooms[roomName].currBoard, rooms[roomName].currColumns, data[1]) //will return id so we can set in the front end
+        new_coord = setPiece(data[0], rooms[roomName].currBoard, rooms[roomName].currColumns, data[1]) //will return id so we can set tile in the front end
 
-        socket.emit('new_move', [new_coord, 'm']);
-        socket.broadcast.to(roomName).emit('new_move', [new_coord, 'o']);
+        socket.emit('new_move', [new_coord, 'm']); //To ourselves telling we made a move
+        socket.broadcast.to(roomName).emit('new_move', [new_coord, 'o']);//TO opponent telling our move
         socket.emit('active', false);
         socket.broadcast.to(roomName).emit('active', true);
 
-        if (new_coord[2] === "v") {
+        if (new_coord[2] === "v") { //Indicating its winning move
             socket.emit("winner");
             socket.broadcast.to(roomName).emit("loser");
 
         }
-        else if (new_coord[2] === "d") {
+        else if (new_coord[2] === "d") { //Game drawn
             socket.emit("draw");
             socket.broadcast.to(roomName).emit("draw");
         }

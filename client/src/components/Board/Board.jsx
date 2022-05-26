@@ -7,6 +7,7 @@ import Confetti from 'react-confetti';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import useSound from 'use-sound';
 import coin from './coin.wav'
+import Chat from '../Chat/Chat'
 
 
 const Board = () => {
@@ -105,7 +106,7 @@ const Board = () => {
 
 
     return (
-        <div style={{ justifyContent: 'center', textAlign: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
             {confettiOn && <Confetti
                 width={width}
                 height={height}
@@ -119,7 +120,9 @@ const Board = () => {
                 })}
 
             </div>
-            <div id='tt' className='turns' > {turn ? <h1>Your Turn</h1> : <div className='waiting'><h1>Waiting for Opponent</h1><span></span><span></span><span></span> </div>}</div>
+            <div></div>
+            <div id='tt' className='turns' > {turn ? <h1>Your Turn</h1> : <div className='waiting'><h2>Waiting for Opponent</h2><span></span><span></span><span></span> </div>}</div>
+            <Chat />
         </div>
     )
 }

@@ -1,20 +1,22 @@
 #board {
   height: 35rem;
   width: 40rem;
-  background-color: #000000;
-  background-image: linear-gradient(to top, #1f225d 0%, #04619f 74%);
+  background-color: #2e41a4;
+  /* background-image: linear-gradient(to top, #1f225d 0%, #04619f 74%); */
   border: 0.5rem solid #01103c;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
 
-  margin: 5% 0 0 31.5%;
+  margin: 3% 0 0 0;
 }
 
 .waiting {
-  display: flex;
+  display: inline-flex;
 }
-.turns .waiting h1 {
+.turns .waiting h2 {
   margin-right: 10px;
+  line-height: 2rem;
+  font-size: 2rem;
 }
 .waiting span {
   width: 10px;
@@ -34,6 +36,10 @@
 }
 .waiting span:nth-child(3) {
   animation-delay: 0.8s;
+}
+
+.waiting span:nth-child(4) {
+  margin-right: 20px;
 }
 
 @keyframes dots {
@@ -58,10 +64,9 @@
   margin-bottom: 5rem;
   border: 0.5rem solid #01103c;
   border-top: 0;
-
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  margin: 0 0 5% 31.5%;
+  margin: 0 0 5% 0%;
 }
 
 .turns h1 {
@@ -78,7 +83,6 @@
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   border: 5px solid #1f2a75;
-  cursor: pointer;
 }
 
 .red-piece {
@@ -87,4 +91,51 @@
 
 .yellow-piece {
   background-color: yellow;
+}
+
+@media only screen and (max-width: 600px) {
+  #board {
+    margin-top: 5rem;
+    height: 18rem;
+    width: 21rem;
+  }
+
+  .tile {
+    height: 1.9rem;
+    width: 1.9rem;
+    margin: 0.2rem;
+  }
+
+  .turns {
+    width: 21rem;
+  }
+  .turns .waiting h2 {
+    margin-right: 10px;
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .waiting span {
+    width: 5px;
+    height: 5px;
+    margin: 15px 2px;
+  }
+}
+
+@media only screen and (max-height: 610px) {
+  #board {
+    margin-top: 2rem;
+    height: 25rem;
+    width: 27rem;
+  }
+
+  .tile {
+    height: 2.8rem;
+    width: 2.8rem;
+    margin: 0.2rem;
+  }
+
+  .turns {
+    width: 27rem;
+  }
 }

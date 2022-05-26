@@ -1,16 +1,46 @@
 .boxx {
+  position: absolute;
+  top: 30vh;
+  left: 35vw;
+  justify-content: space-evenly;
+  text-align: center;
+  border-radius: 10%;
   padding: 5% 5%;
+  background-color: rgba(158, 194, 232, 0.84);
+  width: 20rem;
+  box-shadow: 0 0 10px 3px #000;
+}
+
+.boxx h1 {
+  margin: 4rem 0;
+  color: rgb(0, 255, 251);
+  font-size: 1.5rem;
 }
 
 .new-game {
   display: block;
-  margin-bottom: 10px;
-}
-
-.new-game h1 {
-  margin: 10px auto 10px;
+  margin-top: 22px;
 }
 
 .join-game {
-  justify-content: stretch;
+  justify-content: space-between;
+}
+
+.newgame-btn {
+  padding: 0.9rem 2rem;
+}
+
+.join-btn {
+  padding: 0.9rem 2rem;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .boxx {
+    position: absolute;
+    top: 30vh;
+    left: 17vw;
+    width: 13rem;
+    height: 13rem;
+  }
 }

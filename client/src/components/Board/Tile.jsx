@@ -14,6 +14,7 @@ const Tile = (props) => {
       for (let r = 0; r < 6; r++) {
         let tile = document.getElementById(r.toString() + '-' + c.toString());
         tile.style.borderColor = "#4381b0"
+        tile.style.cursor = 'pointer'
       }
     }
 
@@ -25,6 +26,7 @@ const Tile = (props) => {
       for (let r = 0; r < 6; r++) {
         let tile = document.getElementById(r.toString() + '-' + c.toString());
         tile.style.borderColor = "#1f2a75"
+        tile.style.cursor = 'default'
 
       }
     }
@@ -40,6 +42,7 @@ const Tile = (props) => {
       for (let r = 0; r < 6; r++) {
         let tile = document.getElementById(r.toString() + '-' + c.toString());
         tile.style.borderColor = "#1f2a75"
+        tile.style.cursor = 'default'
 
       }
     }
